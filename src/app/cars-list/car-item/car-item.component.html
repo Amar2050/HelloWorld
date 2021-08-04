@@ -1,9 +1,10 @@
-<div>
+<div class="card  p-5 m-2 shadow">
     <p>{{car.name}}</p>
     <p>Origine: {{car.pays}}</p>
     <p>0 à 100 km/h : {{car.perf}} sec </p>
     <p>Puissance: {{car.power}} CH</p>
     <p>{{ bookingMessage }}</p>
     <button class="btn btn-success" (click)="onBooking()" [disabled]="isBooked">Réserver</button>
+    <button class="btn btn-danger my-3" (click)="onBooking()" [disabled]="isBooked">Annuler</button>
     <hr>
 </div>
