@@ -18,6 +18,7 @@ export class CarItemComponent implements OnInit {
 
   ngOnInit() {
   }
+  
 
   onBooking(){
     this.isBooked= true;
