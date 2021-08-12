@@ -4,6 +4,8 @@
 
 <div class="badge badge-dark my-5">Données mise à jour: {{ carUpdate | date:"EEEE dd MMMM yyyy H:mm" }}</div>
 
+<a  class="badge badge-success mx-5 p-2" routerLink="/new-car">+ Ajouter une voiture</a>
+
 <div class="card-deck  justify-content-center">
     <app-car-item  *ngFor="let oneCar of cars" [car]="oneCar" ></app-car-item>
 </div>

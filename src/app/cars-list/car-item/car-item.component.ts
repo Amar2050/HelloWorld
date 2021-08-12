@@ -8,7 +8,8 @@ import { Car } from 'src/app/models/Car';
 })
 export class CarItemComponent implements OnInit {
 
-  @Input()car!: Car;
+  @Input()
+  car!: Car;
 
   isBooked:boolean = false;
   
@@ -18,7 +19,6 @@ export class CarItemComponent implements OnInit {
 
   ngOnInit() {
   }
-  
 
   onBooking(){
     this.isBooked= true;
