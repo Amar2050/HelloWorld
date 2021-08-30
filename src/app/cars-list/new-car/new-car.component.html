@@ -5,25 +5,25 @@
     <form (ngSubmit)="onSubmit(myForm)" #myForm="ngForm">
         <div class="form-group">
           <label for="name">Nom de la voiture</label>
-          <input type="text" class="form-control" name="name" id="name" ngModel>
+          <input type="text" class="form-control" name="name" id="name" ngModel required>
         </div>
         <div class="form-group">
           <label for="pays">Pays d'origine</label>
-          <input type="text" class="form-control" name="pays" id="pays" ngModel>
+          <input type="text" class="form-control" name="pays" id="pays" ngModel required>
         </div>
         <div class="form-group">
           <label for="coverImage">Photo de la voiture (url)</label>
-          <input type="text" class="form-control" name="coverImage" id="coverImage" ngModel>
+          <input type="text" class="form-control" name="coverImage" id="coverImage" ngModel required>
         </div>
         <div class="form-group">
           <label for="power">Puissance</label>
-          <input type="number" class="form-control" name="power" id="power" ngModel>
+          <input type="number" class="form-control" name="power" id="power" ngModel required>
         </div>
         <div class="form-group">
           <label for="perf">Temps de 0 à 100 km/h</label>
-          <input type="number" class="form-control" name="perf" id="perf" ngModel>
+          <input type="number" class="form-control" name="perf" id="perf" ngModel required>
         </div>
-        <button type="submit" class="btn btn-success my-5">Enregister</button>
+        <button type="submit" [disabled]="myForm.invalid" class="btn btn-success my-5">Enregister</button>
       </form>
 </div>
   
