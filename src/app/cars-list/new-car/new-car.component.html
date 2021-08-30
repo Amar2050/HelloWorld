@@ -2,7 +2,7 @@
     Créer une voiture
 </h1>
 <div class="col-6 border shadow my-5 p-5">
-    <form (ngSubmit)="onSubmit()">
+    <form (ngSubmit)="onSubmit(myForm)" #myForm="ngForm">
         <div class="form-group">
           <label for="name">Nom de la voiture</label>
           <input type="text" class="form-control" name="name" id="name" ngModel>
