@@ -12,4 +12,8 @@ export class NewCarComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  onSubmit(){
+    console.log("C'est cool la digestion active...");
+  }
+
 }
