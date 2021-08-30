@@ -118,6 +118,11 @@ export class DataService{
     getAllCars(){
         return this.cars;
     }
+
+    addCar(car:Car){
+      this.cars.push(car);
+    }
+    
     getNbBestDrivers(nb:number){
 
         var allDrivers = this.drivers.slice();
