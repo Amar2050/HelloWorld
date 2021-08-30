@@ -5,23 +5,23 @@
     <form>
         <div class="form-group">
           <label for="name">Nom de la voiture</label>
-          <input type="text" class="form-control" id="name">
+          <input type="text" class="form-control" name="name" id="name" ngModel>
         </div>
         <div class="form-group">
           <label for="pays">Pays d'origine</label>
-          <input type="text" class="form-control" id="pays">
+          <input type="text" class="form-control" name="pays" id="pays">
         </div>
         <div class="form-group">
           <label for="coverImage">Photo de la voiture (url)</label>
-          <input type="text" class="form-control" id="pays">
+          <input type="text" class="form-control" name="coverImage" id="coverImage">
         </div>
         <div class="form-group">
           <label for="power">Puissance</label>
-          <input type="number" class="form-control" id="power">
+          <input type="number" class="form-control" name="power" id="power">
         </div>
         <div class="form-group">
           <label for="perf">Temps de 0 à 100 km/h</label>
-          <input type="number" class="form-control" id="perf">
+          <input type="number" class="form-control" name="perf" id="perf">
         </div>
         <button class="btn btn-success my-5">Enregister</button>
       </form>
