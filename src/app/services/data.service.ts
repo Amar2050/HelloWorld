@@ -5,7 +5,6 @@ import { Driver } from "../models/Driver";
 @Injectable()
 export class DataService{
 
-  pilote: Driver = new Driver("mister bean", "angleterre","https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGWzXZDb2kx4c_JE3QpuE7iC0y2q97CWUtnEsFEs4a1J4HVxVkYQFPlxDFqfK2feUhP3I&usqp=CAU","formule 1");
 
     drivers: Driver[] = [
         {
@@ -63,9 +62,7 @@ export class DataService{
           coverImage: "./assets/img/drivers/ericaenders.jpg",
           category: "drag",
           likeIts: 0
-        },
-        this.pilote,
-        
+        }
         
       ];
 
