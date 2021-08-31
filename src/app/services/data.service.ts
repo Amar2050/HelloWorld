@@ -64,7 +64,8 @@ export class DataService{
           category: "drag",
           likeIts: 0
         },
-        this.pilote
+        this.pilote,
+        
         
       ];
 
@@ -125,6 +126,10 @@ export class DataService{
 
     addCar(car:Car){
       this.cars.push(car);
+    }
+    
+    addDriver(driver:Driver){
+      this.drivers.push(driver);
     }
     
     getNbBestDrivers(nb:number){
