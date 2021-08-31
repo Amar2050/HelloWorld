@@ -2,6 +2,9 @@
     Nos Pilotes
 </h1>
 
+
+<a  class="badge badge-success mx-5 p-2 my-5" routerLink="/new-driver">+ Ajouter une pilote</a>
+
 <div class="card-deck  justify-content-center">
     <app-driver-item  *ngFor="let oneDriver of drivers" [driver]="oneDriver" ></app-driver-item>
 </div>

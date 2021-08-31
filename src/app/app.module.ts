@@ -21,6 +21,7 @@ import { CarItemComponent } from './cars-list/car-item/car-item.component';
 import { DriverItemComponent } from './drivers-list/driver-item/driver-item.component';
 import { FooterComponent } from './footer/footer.component';
 import { NewCarComponent } from './cars-list/new-car/new-car.component';
+import { NewDriverComponent } from './drivers-list/new-driver/new-driver.component';
 
 
 @NgModule({
@@ -34,7 +35,8 @@ import { NewCarComponent } from './cars-list/new-car/new-car.component';
     CarItemComponent,
     DriverItemComponent,
     FooterComponent,
-    NewCarComponent
+    NewCarComponent,
+    NewDriverComponent
   ],
   imports: [
     BrowserModule,
