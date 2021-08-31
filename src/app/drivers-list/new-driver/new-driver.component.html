@@ -39,7 +39,18 @@
   
       <div class="form-group">
         <label for="category">Discipline</label>
-        <input type="text" class="form-control" formControlName="category" id="power" required>
+
+        <select class="form-control" name="category" id="category" formControlName="category"> 
+          <option class="badge" *ngFor="let category of categories" [value]="category" [ngClass]="{
+              'badge-success': category == 'gymkhana',
+              'badge-warning': category == 'formule 1',
+              'badge-info': category == 'rallye',
+              'badge-primary': category == 'nascar',
+              'badge-danger': category == 'drag'}">
+
+              {{ category | titlecase }}
+          </option>
+      </select>
       </div>
   
       <button type="submit"  class="btn btn-success my-5" [disabled]="driverForm.invalid">Enregister</button>

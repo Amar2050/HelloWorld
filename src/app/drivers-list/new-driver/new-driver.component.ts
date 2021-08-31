@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { Driver } from 'src/app/models/Driver';
 import { DataService } from 'src/app/services/data.service';
 
@@ -11,11 +12,14 @@ import { DataService } from 'src/app/services/data.service';
 export class NewDriverComponent implements OnInit {
   
   driverForm!: FormGroup;
+  categories:any;
 
   constructor(private data:DataService,
-              private formBuilder:FormBuilder) { }
+              private formBuilder:FormBuilder,
+              private router: Router) { }
 
   ngOnInit(): void {
+    this.categories= this.data.getAllCategories();
     this.createForm();
   }
   minLong:number = 2;
@@ -37,7 +41,9 @@ export class NewDriverComponent implements OnInit {
       formValue['coverImage'],
       formValue['category']
     )
-    console.log(driver);
+    // console.log(driver);
+    this.data.addDriver(driver);
+    this.router.navigate(['drivers']);
   }
 
 }

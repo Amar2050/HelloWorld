@@ -5,6 +5,7 @@ import { Driver } from "../models/Driver";
 @Injectable()
 export class DataService{
 
+  categories:string[] = ["gymkhana", "nascar", "rallye", "drag", "formule 1"];
 
     drivers: Driver[] = [
         {
@@ -119,6 +120,9 @@ export class DataService{
 
     getAllCars(){
         return this.cars;
+    }
+    getAllCategories(){
+        return this.categories;
     }
 
     addCar(car:Car){
