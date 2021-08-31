@@ -5,34 +5,25 @@
     <form (ngSubmit)="onSubmit()" [formGroup]="driverForm">
   
       <div class="form-group">
-        <label for="name">Nom u pilote</label>
-        <input type="text" class="form-control" name="name" id="name"  >
+        <label for="name">Nom complet du pilote</label>
+        <input type="text" class="form-control" formControlName="fullName" id="name"  >
       </div>
   
       <div class="form-group">
         <label for="pays">Pays d'origine</label>
-        <input type="text" class="form-control" name="pays" id="pays"  >
-  
-      
+        <input type="text" class="form-control" formControlName="pays" id="pays"  >
       </div>
   
       <div class="form-group">
         <label for="coverImage">Avatar (url)</label>
-        <input type="text" class="form-control" name="coverImage"  id="coverImage" >
-  
-  
-  
+        <input type="text" class="form-control" formControlName="coverImage"  id="coverImage" >
       </div>
   
       <div class="form-group">
-        <label for="power">Discipline</label>
-        <input type="number" class="form-control" name="power" id="power" >
-  
-      
+        <label for="category">Discipline</label>
+        <input type="text" class="form-control" formControlName="category" id="power" >
       </div>
   
-
-  
-      <button type="submit"  class="btn btn-success my-5">Enregister</button>
+      <button type="submit"  class="btn btn-success my-5" [disabled]="driverForm.invalid">Enregister</button>
     </form>
   </div>

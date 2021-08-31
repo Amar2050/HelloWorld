@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Driver } from 'src/app/models/Driver';
 import { DataService } from 'src/app/services/data.service';
 
@@ -21,10 +21,10 @@ export class NewDriverComponent implements OnInit {
 
   createForm(){
     this.driverForm = this.formBuilder.group({
-      fullName: [''],
-      pays: [''],
-      coverImage: [''],
-      category: ['']
+      fullName: ['', Validators.required ],
+      pays: ['' , [Validators.required, Validators.minLength(2)] ],
+      coverImage: ['' , Validators.required],
+      category: ['' , Validators.required]
     })
   }
 
