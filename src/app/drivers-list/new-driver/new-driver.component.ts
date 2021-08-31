@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { Driver } from 'src/app/models/Driver';
 import { DataService } from 'src/app/services/data.service';
 
@@ -9,10 +10,33 @@ import { DataService } from 'src/app/services/data.service';
 })
 export class NewDriverComponent implements OnInit {
   
-  
-  constructor(private data:DataService) { }
+  driverForm!: FormGroup;
+
+  constructor(private data:DataService,
+              private formBuilder:FormBuilder) { }
 
   ngOnInit(): void {
+    this.createForm();
+  }
+
+  createForm(){
+    this.driverForm = this.formBuilder.group({
+      fullName: [''],
+      pays: [''],
+      coverImage: [''],
+      category: ['']
+    })
+  }
+
+  onSubmit(){
+    const formValue = this.driverForm.value;
+    const driver = new Driver(
+      formValue['fullName'],
+      formValue['pays'],
+      formValue['coverImage'],
+      formValue['category']
+    )
+    console.log(driver);
   }
 
 }

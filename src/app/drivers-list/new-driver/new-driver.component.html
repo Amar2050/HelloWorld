@@ -2,13 +2,11 @@
     Créer un Driver
   </h1>
   <div class="col-6 border shadow my-5 p-5">
-    <form >
+    <form (ngSubmit)="onSubmit()" [formGroup]="driverForm">
   
       <div class="form-group">
-        <label for="name">Nom de la voiture</label>
+        <label for="name">Nom u pilote</label>
         <input type="text" class="form-control" name="name" id="name"  >
-  
-      
       </div>
   
       <div class="form-group">
@@ -19,7 +17,7 @@
       </div>
   
       <div class="form-group">
-        <label for="coverImage">Photo de la voiture (url)</label>
+        <label for="coverImage">Avatar (url)</label>
         <input type="text" class="form-control" name="coverImage"  id="coverImage" >
   
   
@@ -27,18 +25,13 @@
       </div>
   
       <div class="form-group">
-        <label for="power">Puissance</label>
+        <label for="power">Discipline</label>
         <input type="number" class="form-control" name="power" id="power" >
   
       
       </div>
   
-      <div class="form-group">
-        <label for="perf">Temps de 0 à 100 km/h</label>
-        <input type="number" class="form-control" name="perf" id="perf" >
-  
-      
-      </div>
+
   
       <button type="submit"  class="btn btn-success my-5">Enregister</button>
     </form>
