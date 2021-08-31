@@ -1,10 +1,13 @@
 import { Injectable } from "@angular/core";
 import { Car } from "../models/Car";
+import { Driver } from "../models/Driver";
 
 @Injectable()
 export class DataService{
 
-    drivers: any = [
+  pilote: Driver = new Driver("mister bean", "angleterre","https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGWzXZDb2kx4c_JE3QpuE7iC0y2q97CWUtnEsFEs4a1J4HVxVkYQFPlxDFqfK2feUhP3I&usqp=CAU","formule 1");
+
+    drivers: Driver[] = [
         {
           fullName: "ken block",
           pays: "usa",
@@ -42,7 +45,7 @@ export class DataService{
         },
         {
           fullName: "shirley muldowney",
-          pays: null,
+          pays: "usa",
           coverImage: "./assets/img/drivers/shirleymuldowney.jpg",
           category: "drag",
           likeIts: 5
@@ -61,6 +64,7 @@ export class DataService{
           category: "drag",
           likeIts: 0
         },
+        this.pilote
         
       ];
 

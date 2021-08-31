@@ -15,7 +15,6 @@ export class DriverItemComponent implements OnInit {
     
   }
 
-
   onLike(){
     this.driver.likeIts++
   }
