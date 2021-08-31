@@ -18,11 +18,12 @@ export class NewDriverComponent implements OnInit {
   ngOnInit(): void {
     this.createForm();
   }
+  minLong:number = 2;
 
   createForm(){
     this.driverForm = this.formBuilder.group({
       fullName: ['', Validators.required ],
-      pays: ['' , [Validators.required, Validators.minLength(2)] ],
+      pays: ['' , [Validators.required, Validators.minLength(this.minLong)] ],
       coverImage: ['' , Validators.required],
       category: ['' , Validators.required]
     })

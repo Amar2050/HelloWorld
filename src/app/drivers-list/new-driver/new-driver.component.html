@@ -5,23 +5,41 @@
     <form (ngSubmit)="onSubmit()" [formGroup]="driverForm">
   
       <div class="form-group">
-        <label for="name">Nom complet du pilote</label>
-        <input type="text" class="form-control" formControlName="fullName" id="name"  >
+        <label for="name">Nom complet du pilote
+          <span class="text-danger" *ngIf=" driverForm.controls['fullName'].errors  && driverForm.controls['fullName'].hasError('required')  ">
+                *
+          </span>
+        </label>
+        <input type="text" class="form-control" formControlName="fullName" id="name" required>
+
+        <small class="badge badge-danger my-2" *ngIf="driverForm.controls['fullName'].hasError('required') &&  driverForm.controls['fullName'].touched " >
+
+          Ce champs est requis
+        </small>
       </div>
   
+
+      <!-- ------------PAYS-------------- -->
+
       <div class="form-group">
         <label for="pays">Pays d'origine</label>
-        <input type="text" class="form-control" formControlName="pays" id="pays"  >
+        <input type="text" class="form-control" formControlName="pays" id="pays" required>
+
+        <small class="badge badge-danger my-2" *ngIf="driverForm.controls['pays'].hasError('minlength')">
+            Minimum {{ minLong }} caractères requis.
+        </small>
       </div>
-  
+
+
+    <!-- ------------END PAYS-------------- -->
       <div class="form-group">
         <label for="coverImage">Avatar (url)</label>
-        <input type="text" class="form-control" formControlName="coverImage"  id="coverImage" >
+        <input type="text" class="form-control" formControlName="coverImage"  id="coverImage" required>
       </div>
   
       <div class="form-group">
         <label for="category">Discipline</label>
-        <input type="text" class="form-control" formControlName="category" id="power" >
+        <input type="text" class="form-control" formControlName="category" id="power" required>
       </div>
   
       <button type="submit"  class="btn btn-success my-5" [disabled]="driverForm.invalid">Enregister</button>
